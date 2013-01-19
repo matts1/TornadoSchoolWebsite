@@ -6,7 +6,6 @@ def index(response):
 
 server = Server()
 server.register('/', index)
-server.register('/test/blah', index)
 
 server.run()
 

@@ -12,11 +12,15 @@ body {
 }
 
 /* NAVBAR */
+nav li {
+    list-style-type: none;
+}
+
 nav li.first a:hover {
     background-color: #143885;
 }
 
-nav li.first a {
+nav li.first a, footer div#footerbar a {
     color: white;
     text-decoration: none;
 }

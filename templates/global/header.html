@@ -13,13 +13,12 @@
             <img src="/static/images/banner.jpg" alt="banner" id="banner">
             <nav>
                 {% run navbar = [
-                    ("left", [
+                ("left", [
                         ("Reset Password", "/reset.html")
-                    ]), ("right", [
-                        ("Sign Up", "/test"),
+                ]), ("right", [
+                        ("Sign Up", "/register.html"),
                         ("Login", "/login.html")
-                    ])
-                ] %}
+                ])] %}
                 {% for side in navbar %}
                 <ul class="first">
                     {% run floatside, side = side %}
@@ -33,3 +32,4 @@
             </nav>
         </header>
         <div id="content">
+            <noscript><h1>Please Enable Javascript to allow this site to function properly</h1></noscript>

@@ -4,6 +4,12 @@ body {
     margin: 0 auto;
 }
 
+/* CONTENT */
+div#content {
+    position: relative;
+    top: -20px;
+}
+
 /* HEADER */
 header img#banner {
     width: 960px;
@@ -26,4 +32,22 @@ nav ul.first {
 nav li.first a.first {
     padding: 5px 15px;
     
+}
+
+/* FOOTER */
+footer div#footerbar {
+    background-color: #061E5C;
+    height:23px;
+}
+
+footer div#footerbar a {
+    padding: 5px 15px;
+    position: relative;
+    top: 2px;
+}
+
+footer div#valid img {
+    margin: 10px 0 0 0;
+    height:100px;
+    width:auto;
 }
