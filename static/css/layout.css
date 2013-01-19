@@ -1,0 +1,29 @@
+/* GENERAL */
+body {
+    width:960px;
+    margin: 0 auto;
+}
+
+/* HEADER */
+header img#banner {
+    width: 960px;
+    height: auto;
+}
+
+/* NAV */
+nav {
+    position: relative;
+    top:-26px;
+    height: 20px;
+}
+
+nav ul.first {
+    margin: 0;
+    padding: 0px;
+    text-align: left;
+}
+
+nav li.first a.first {
+    padding: 5px 15px;
+    
+}

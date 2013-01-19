@@ -1,0 +1,27 @@
+/* GENERAL */
+html {
+    background-color: #E0EEEE;
+}
+
+body {
+    text-align:center;
+    font-size:12px;
+    font-family:"Helvetica Neue",Arial,Helvetica,sans-serif;
+    font-weight:400;
+    line-height:18px;
+}
+
+/* NAVBAR */
+nav li.first a:hover {
+    background-color: #143885;
+}
+
+nav li.first a {
+    color: white;
+    text-decoration: none;
+}
+
+/* FORMS */
+input.error {
+    border: 2px solid #FF0000;
+}
