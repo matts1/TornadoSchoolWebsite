@@ -12,10 +12,6 @@ body {
 }
 
 /* NAVBAR */
-nav li {
-    list-style-type: none;
-}
-
 nav li.first a:hover {
     background-color: #143885;
 }
