@@ -18,4 +18,3 @@ class ForNode(BlockNode):
             context[self.varname] = item
             output += self.eval_children(context)
         return output
-
