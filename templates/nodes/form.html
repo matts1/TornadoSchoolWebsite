@@ -1,0 +1,13 @@
+<form enctype="multipart/form-data" method="POST">
+    <fieldset>
+        <legend>
+            {{ name }}
+        </legend>
+        {% for field in fields %}
+        <p>
+            <label for="{{ field["name"] }}">{{ field["placeholder"] }}</label>
+            <input {% for attr in field %} {{ attr }}="{{ field[attr] }}" {% end for %}>
+        </p>
+        {% end for %}
+    </fieldset>
+</form>

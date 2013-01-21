@@ -1,0 +1,21 @@
+{% include global/header.html %}<!-- begins #main -->
+
+<style type="text/css">
+a.back, a.back:hover {
+    cursor: pointer;
+}
+</style>
+
+<section class="hero" id="error-page">
+
+    <hgroup class="page-width">
+        <img  src="static/images/logo/rain/404-cloud.png" />
+        <h1>Oops! There seems to be an error!</h1>  
+    </hgroup>
+    <section class="page-width error-message">
+        <h2>NERD ALERT: {{ error_message }}</h2>
+        <h3><a onclick="history.go(-1)" class="back">Go back</a></h3>
+    </section>
+</section>
+
+<!--ends #main -->{% include global/footer.html %}
