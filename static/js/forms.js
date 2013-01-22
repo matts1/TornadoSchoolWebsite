@@ -11,9 +11,16 @@ function GetInvalidReason (element, submit) {
     }
     var type = element.attr('type');
     var numregex = /-?\d+/;
+    var emailregex = /.+@.+/;
+//    console.log(element, type);
     if (type == "number") {
         if (val.replace(numregex, "") != "" || val == "") {
             return "%s is not a number";
+        }
+    } else if (type == "email") {
+        console.log("email");
+        if (!val.match(emailregex)) {
+            return "%s is not a valid email address";
         }
     } else if (type == "password") {
         if (submit) {

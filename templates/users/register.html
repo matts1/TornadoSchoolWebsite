@@ -1,3 +1,9 @@
 {% include /global/header.html %}
-CONTENT HERE
+{% form Sign up [
+    (1, "Email", "email", "email"),
+    (1, "First Name", "first"),
+    (1, "Surname", "last"),
+    (1, "Password", "pwd", "password"),
+    (0, "Confirm Password", "conf-pwd", "password"),
+] %}
 {% include /global/footer.html %}

@@ -29,3 +29,9 @@ nav li.first a, footer div#footerbar a {
 input.error {
     border: 2px solid #FF0000;
 }
+
+form p.err p {
+    margin: 2px;
+    line-height: 14px;
+    color: #FF0000;
+}
