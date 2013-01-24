@@ -1,4 +1,4 @@
-<form enctype="multipart/form-data" method="POST">
+<form enctype="multipart/form-data" method="POST" xmlns="http://www.w3.org/1999/html">
     <fieldset>
         <legend>
             {{ name }}
@@ -10,7 +10,15 @@
             <input {% for attr in field %} {{ attr }}="{{ field[attr] }}" {% end for %}>
         </p>
         {% end for %}
-        <p class="err">{{ err }}</p>
+        <section class="err">
+            {% if isinstance(err, str) %}
+                <p>{{ err }}</p>
+            {% else %}
+                {% for item in err %}
+                    <p>{{ item }}</p>
+                {% end for %}
+            {% end if %}
+        </section>
         <p>
             <input type="submit" value="{{ submit }}">
         </p>

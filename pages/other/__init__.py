@@ -1,1 +1,1 @@
-__author__ = 'matt'
+from template_engine.main import render

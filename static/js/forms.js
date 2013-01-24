@@ -3,7 +3,7 @@ var pwddone = 0;
 
 function GetInvalidReason (element, submit) {
     // checks if element is valid, returns reason if it's not
-    var val = element.val()
+    var val = element.val();
     if (element.attr('required')) {
         if (val.length == 0) {
             return "%s is required";
@@ -40,13 +40,13 @@ function GetInvalidReason (element, submit) {
             }
         }
     } else if (type == "range") {
-        max = parseInt(element.attr("max"));
-        min = parseInt(element.attr("min"));
+        var max = parseInt(element.attr("max"));
+        var min = parseInt(element.attr("min"));
         if (val.replace(numregex, "") != "" || val == "") {
             return "%s is not a number";
-        } else if (min != NaN && min > val) {
+        } else if (min > val) {
             return "%s should be greater than or equal to " + element.attr("min");
-        } else if (max != NaN && max < val) {
+        } else if (max < val) {
             return "%s should be less than or equal to " + element.attr("max");
         }
     } else if (type == "search") {
@@ -55,7 +55,7 @@ function GetInvalidReason (element, submit) {
 }
 
 function IsValid(element, error) {
-    reason = GetInvalidReason(element, error);
+    var reason = GetInvalidReason(element, error);
     if (reason) {
         reason = reason.replace("%s", element.attr("placeholder"));
         if (error) {
