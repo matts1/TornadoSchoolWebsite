@@ -24,6 +24,7 @@ class Users(Base):
         """validates the data then registers and returns True if it is valid (otherwise returns false)"""
         if len(fields) != 6:
             raise ValueError("fields needs to contain 6 items")
+        fields[-1] = bool(fields[-1]) * 2
         email, first, last, pwd, conf_pwd, teacher = fields
         if pwd != conf_pwd:
             return False
@@ -34,8 +35,6 @@ class Users(Base):
         except ValueError:
             fields = [email, teacher, random_key(200), first, last, pwd]
             if None not in fields and "" not in fields:
-                fields[1] = bool(fields[1]) * 3
-                print(fields[1])
                 first = fields[3] = first.title()
                 last = fields[4] = last.title()
                 fields[-1] = encrypt(fields[-1])
@@ -51,5 +50,5 @@ If you did not register for this account, delete this email and nothing will hap
 
     def activate(self, key):
         cur = self.open()
-        cur.execute("UPDATE users SET state=1 WHERE state=0 AND key=?", [key])
+        cur.execute("UPDATE users SET state=state+1 WHERE (state=0 or state=2) AND key=?", [key])
         self.close()
