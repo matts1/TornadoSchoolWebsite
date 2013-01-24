@@ -1,6 +1,6 @@
 from models.tables.users import Users
-students = Users()
+users = Users()
 
 def activate(response, key):
-    students.activate(key)
+    users.activate(key)
     response.redirect("/login")

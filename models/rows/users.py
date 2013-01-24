@@ -1,5 +1,7 @@
 from ..base import Base
 from hashlib import sha512
+from functions.email import *
+from functions.random import random_key
 
 def encrypt(text):
     return sha512(text.encode()).hexdigest()
@@ -36,13 +38,23 @@ Can be called either as User(email) or User(id)"""
         else:
             return False
 
-    def chg_pwd(self, newpwd):
+    def chgPwd(self, newpwd):
         """changes the password for this user (check authentication BEFORE using this) and saves the user to the database"""
         self.pwd = newpwd
         self.save()
 
-    def get_classes(self):
+    def getClasses(self):
         cur = self.open()
         cur.execute("SELECT classid FROM studentclass WHERE studentid=?", [self.id])
+        result = [x[0] for x in cur.fetchall()] #turns list of 1-item tuples into list
         self.close()
-        return [x[0] for x in cur.fetchall()] #turns list of 1-item tuples into list
+        return result
+
+    def prepareReset(self):
+        cur = self.open()
+        new_key = random_key(200)
+        cur.execute("UPDATE users SET key=? WHERE ID=?", [new_key, self.id])
+        send_email(self.email, "Password reset for CHS assignment management system",
+        """A password reset has been requested for this account on the CHS assignment management system. If you did not click this link, discard this message
+{address}/reset/{key}""".format(address=WEBSITE_ADDRESS, key=new_key))
+        self.close()

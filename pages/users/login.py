@@ -6,7 +6,6 @@ def login(response):
     email = response.get_field("email")
     password = response.get_field("pwd")
     result = Users().login(email, password)
-    print(result)
     if result == None:
         err = ""
     elif result == False:

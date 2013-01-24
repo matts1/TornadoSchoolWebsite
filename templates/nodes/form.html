@@ -4,12 +4,14 @@
             {{ name }}
         </legend>
         <p class="form_top">{{ top }}</p>
-        {% for field in fields %}
-        <p class="input">
-            <label for="{{ field["name"] }}">{{ field["placeholder"] }}</label>
-            <input {% for attr in field %} {{ attr }}="{{ field[attr] }}" {% end for %}>
-        </p>
-        {% end for %}
+        <div class="fields">
+            {% for field in fields %}
+            <p class="input">
+                <label for="{{ field["name"] }}">{{ field["placeholder"] }}: </label>
+                <input {% for attr in field %} {{ attr }}="{{ field[attr] }}" {% end for %}>
+            </p>
+            {% end for %}
+        </div>
         <section class="err">
             {% if isinstance(err, str) %}
                 <p>{{ err }}</p>
