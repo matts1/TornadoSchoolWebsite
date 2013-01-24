@@ -82,9 +82,9 @@ $('form input[type=submit]').live('click', function(event) {
             valid = false;
         }
     }
-    if (valid) {
+/*    if (valid) {
         error.append("<p>SUCCESS</p>");
-    }
+    }*/
     return valid;
 });
 $('input').live('blur', function(event) {

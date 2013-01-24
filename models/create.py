@@ -1,28 +1,31 @@
 import sqlite3
 
 import os
-os.system("rm data.db")
+db_file = "{}/data.db".format(__file__[::-1].split("/",1)[1][::-1])
+print("creating db at {}".format(db_file))
+os.system("rm " + db_file)
 
-with sqlite3.connect("data.db") as db:
+with sqlite3.connect(db_file) as db:
     cur = db.cursor()
-    for tablename in ["student", "teacher"]:
-        cur.execute("""CREATE TABLE {} (
-            id INTEGER,
-            email TEXT UNIQUE NOT NULL,
-            first TEXT NOT NULL,
-            last TEXT NOT NULL,
-            password TEXT NOT NULL,
-            PRIMARY KEY (id)
-        );""".format(tablename))
+    cur.execute("""CREATE TABLE users (
+        id INTEGER,
+        email TEXT UNIQUE NOT NULL,
+        state INTEGER NOT NULL,
+        key TEXT UNIQUE NOT NULL,
+        first TEXT NOT NULL,
+        last TEXT NOT NULL,
+        password TEXT NOT NULL,
+        PRIMARY KEY (id)
+    );""")#need to add settings
 
-    cur.execute("""CREATE TABLE course (
+    cur.execute("""CREATE TABLE courses (
         id INTEGER,
         name TEXT NOT NULL,
         subject TEXT NOT NULL,
         year INTEGER NOT NULL,
         class INTEGER,
         PRIMARY KEY (id),
-        FOREIGN KEY (class) REFERENCES class (id)
+        FOREIGN KEY (class) REFERENCES classes (id)
     );""")
 
     cur.execute("""CREATE TABLE work (
@@ -30,17 +33,17 @@ with sqlite3.connect("data.db") as db:
         type TEXT NOT NULL,
         course INTEGER NOT NULL,
         PRIMARY KEY (id),
-        FOREIGN KEY (course) REFERENCES course (id)
+        FOREIGN KEY (course) REFERENCES courses (id)
     );""")#need to add more stuff into work - no clue what yet
 
-    cur.execute("""CREATE TABLE class (
+    cur.execute("""CREATE TABLE classes (
         id INTEGER,
         year INTEGER NOT NULL,
         subject TEXT NOT NULL,
         letter TEXT NOT NULL,
         teacher INTEGER NOT NULL,
         PRIMARY KEY (id),
-        FOREIGN KEY (teacher) REFERENCES teacher (id)
+        FOREIGN KEY (teacher) REFERENCES users (id)
     );""")
 
     cur.execute("""CREATE TABLE studentwork (
@@ -50,7 +53,7 @@ with sqlite3.connect("data.db") as db:
         mark INTEGER NOT NULL,
         comment TEXT,
         PRIMARY KEY (student, work),
-        FOREIGN KEY (student) REFERENCES student (id),
+        FOREIGN KEY (student) REFERENCES users (id),
         FOREIGN KEY (work) REFERENCES work (id)
     );""")
 
@@ -58,13 +61,13 @@ with sqlite3.connect("data.db") as db:
         student INTEGER,
         class INTEGER,
         PRIMARY KEY (student, class),
-        FOREIGN KEY (student) REFERENCES student (id),
+        FOREIGN KEY (student) REFERENCES users (id),
         FOREIGN KEY (class) REFERENCES class (id)
     );""")
 
     cur.execute("""CREATE TABLE session (
         session_id TEXT,
         user INTEGER,
-        FOREIGN KEY (user) REFERENCES users(id),
+        FOREIGN KEY (user) REFERENCES users (id),
         UNIQUE (session_id)
     );""")

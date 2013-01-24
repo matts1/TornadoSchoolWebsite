@@ -5,10 +5,11 @@ class FormNode(BlockNode):
         super().__init__(args, parent)
         self.block = False
         args = args.split("[", 1)
-        if len(args) != 2:
+        if len(args) != 2 or len(args[1].split("]")) != 2:
             raise SyntaxError("Form is not complete")
-        self.name, args = args
-        args = eval("[" + args)
+        self.name = args[0]
+        args, self.success = args[1].split("]")
+        args = eval("[" + args + "]")
         self.fields = []
         for field in args:
             if len(field) < 3:
@@ -34,7 +35,9 @@ class FormNode(BlockNode):
             self.fields.append(attr)
     def eval(self, context):
         from .main import Parser
+        if self.success:
+            self.success = eval(self.success, {}, context)
         return Parser("nodes/form.html").parse().eval({"fields": self.fields,
-            "name": self.name})
+            "name": self.name, "success": self.success})
 
 

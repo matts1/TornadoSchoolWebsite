@@ -1,9 +1,15 @@
+{% run title="Sign Up" %}
 {% include /global/header.html %}
+{% run success={
+    None: "",
+    False: "This email address has already been taken",
+    True: "An activation email has been sent to {}".format(email)
+}[success] %}
 {% form Sign up [
     (1, "Email", "email", "email"),
     (1, "First Name", "first"),
     (1, "Surname", "last"),
     (1, "Password", "pwd", "password"),
     (0, "Confirm Password", "conf-pwd", "password"),
-] %}
+] success %}
 {% include /global/footer.html %}

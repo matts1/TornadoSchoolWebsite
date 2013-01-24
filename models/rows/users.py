@@ -1,24 +1,24 @@
-from base import BaseModel
+from ..base import Base
 from hashlib import sha512
 
 def encrypt(text):
     return sha512(text.encode()).hexdigest()
 
-class Student(BaseModel):
-    table = "student"
+class User(Base):
     def __init__(self, identity):
-        """A class which represents a singls row in the table {0}.
-Can be called either as {0}(email) or {0}(id)""".format(self.table)
+        """A class which represents a single row in the table users.
+Can be called either as User(email) or User(id)"""
         cur = self.open()
-        values = cur.execute("SELECT * FROM {} where id=? OR email=?".format(self.table), [identity, identity]).fetchone()
-        assert(values != None) #invalid ID
-        self.id, self.email, self.first, self.last, self.pwd = values
+        values = cur.execute("SELECT * FROM users where id=? OR email=?", [identity, identity]).fetchone()
         self.close()
+        if values == None: #invalid ID
+            raise ValueError("No user has {} as their id or email".format(identity))
+        self.id, self.email, self.state, self.key, self.first, self.last, self.pwd = values
 
     def save(self):
         """saves the changes made to the instance to the database"""
         cur = self.open()
-        cur.execute("UPDATE {} SET email=?, first=?, last=?, password=? WHERE id=?".format(self.table), [self.email, self.first, self.last, self.pwd, self.id])
+        cur.execute("UPDATE users SET email=?, state=?, key=? first=?, last=?, password=? WHERE id=?", [self.email, self.state, self.key, self.first, self.last, self.pwd, self.id])
         self.close()
 
     def discard(self):
@@ -46,10 +46,3 @@ Can be called either as {0}(email) or {0}(id)""".format(self.table)
         cur.execute("SELECT classid FROM studentclass WHERE studentid=?", [self.id])
         self.close()
         return [x[0] for x in cur.fetchall()] #turns list of 1-item tuples into list
-
-    
-        
-a = Student(1)
-print(a)
-a = Student("abc@gmail.com")
-print(a)

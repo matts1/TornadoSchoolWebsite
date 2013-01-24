@@ -1,8 +1,8 @@
 import sqlite3
 
-class BaseTable(object):
+class Base(object):
     def open(self):
-        self.db = sqlite3.connect("../data.db")
+        self.db = sqlite3.connect("models/data.db")
         return self.db.cursor()
 
     def close(self):

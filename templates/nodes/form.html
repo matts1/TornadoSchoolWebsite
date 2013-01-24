@@ -9,8 +9,8 @@
             <input {% for attr in field %} {{ attr }}="{{ field[attr] }}" {% end for %}>
         </p>
         {% end for %}
-        <p class="err">
-        </p>
+        <p class="success">{{ success }}</p>
+        <p class="err"></p>
         <p>
             <input type="submit" value="{{ name }}">
         </p>
