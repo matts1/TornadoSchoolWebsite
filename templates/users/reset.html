@@ -1,0 +1,9 @@
+{% run title="Reset Password" %}
+{% include /global/header.html %}
+{% if displayreset %}
+{% else %}
+    {{ form("Reset Password", [
+        (1, "Email", "email", "email")
+        ], submit="Send Email") }}
+{% end if %}
+{% include /global/footer.html %}

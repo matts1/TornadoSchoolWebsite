@@ -5,7 +5,6 @@ from .fornode import ForNode
 from .ifnode import IfNode, ElifNode, ElseNode
 from .runnode import RunNode
 
-from .formnode import FormNode
 
 import re
 #TODO: Javascript / HTML injection prevention {{ protected }}
@@ -25,7 +24,6 @@ class Parser(object):
                 "elif": ElifNode,
                 "else": ElseNode,
                 "run": RunNode,
-                "form": FormNode,
         }
         self.filename = ""
         if isfile:

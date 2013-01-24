@@ -3,16 +3,17 @@
         <legend>
             {{ name }}
         </legend>
+        <p class="form_top">{{ top }}</p>
         {% for field in fields %}
-        <p>
+        <p class="input">
             <label for="{{ field["name"] }}">{{ field["placeholder"] }}</label>
             <input {% for attr in field %} {{ attr }}="{{ field[attr] }}" {% end for %}>
         </p>
         {% end for %}
-        <p class="success">{{ success }}</p>
-        <p class="err"></p>
+        <p class="err">{{ err }}</p>
         <p>
-            <input type="submit" value="{{ name }}">
+            <input type="submit" value="{{ submit }}">
         </p>
+        <p class="form_bottom">{{ bottom }}</p>
     </fieldset>
 </form>
