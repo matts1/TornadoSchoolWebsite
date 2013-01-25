@@ -47,6 +47,8 @@ class Users(object):
         except ValueError:
             fields = [email, teacher, random_key(200), first, last, pwd]
             if None not in fields and "" not in fields:
+                if len(pwd) < 6:
+                    return False
                 first = fields[3] = first.title()
                 last = fields[4] = last.title()
                 fields[-1] = encrypt(fields[-1])

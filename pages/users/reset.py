@@ -4,25 +4,27 @@ from models.tables.users import Users
 users = Users()
 
 @get_level
-def reset(response, reset_key, user=None):
-    print(user)
-    user = users.get_users_by_reset(reset_key)
-    if False:
-        pass#user is logged in
-        #replace user variable with variable of logged in user
-    elif user == None:#not logged in and not valid reset key
+def reset(response, reset_key, user):
+    if user == None:
+        user = users.get_users_by_reset(reset_key)
+    if user != None: #user is logged in or has valid key
+        pwd = response.get_field("pwd")
+        conf_pwd = response.get_field("conf_pwd")
+        success = ""
+        if conf_pwd == pwd and pwd not in ["", None] and len(pwd) >= 6:
+            user.chgPwd(pwd)
+            success = "Your password has been reset"
+        context = {"displayreset": True, "success": success}
+    else:#not logged in and not valid reset key
         email = response.get_field("email")
-        err = ""
+        err = success = ""
         if email != None and not email.isdigit():
             try:
                 user = users.get_activated_user(email)
                 user.prepareReset()
+                success = "An email has been sent to {} giving information on how to reset your password".format(email)
             except ValueError as e:
                 err = str(e)
 
-        context = {"displayreset": False, "err": err}
-        render("users/reset.html", response, context)
-        return
-    print(user)
-    #TODO: before getting this to work, add login capabilities
-    context = {"displayreset": True}
+        context = {"displayreset": False, "err": err, "success": success}
+    render("users/reset.html", response, context)

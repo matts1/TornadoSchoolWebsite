@@ -9,7 +9,7 @@ def send_email(recipients, subject="", text=""):
     msg = MIMEText(text)
     msg["Subject"] = subject
     msg["From"] = "donotreply@chs.com"
-    msg["To"] = ", ".join(recipients)
+    msg["To"] = recipients
     s = smtplib.SMTP('localhost')
     s.sendmail(msg["From"], recipients, msg.as_string())
     s.quit()

@@ -17,7 +17,7 @@ Can be called either as User(email) or User(id)"""
 
     def save(self):
         """saves the changes made to the instance to the database"""
-        query("UPDATE users SET email=?, state=?, key=? first=?, last=?, password=? WHERE id=?", [self.email, self.state, self.key, self.first, self.last, self.pwd, self.id])
+        query("UPDATE users SET email=?, state=?, key=?, first=?, last=?, password=? WHERE id=?", [self.email, self.state, self.key, self.first, self.last, self.pwd, self.id])
 
     def discard(self):
         """discards any changes made to the instance since the last save to the database"""
@@ -36,7 +36,7 @@ Can be called either as User(email) or User(id)"""
 
     def chgPwd(self, newpwd):
         """changes the password for this user (check authentication BEFORE using this) and saves the user to the database"""
-        self.pwd = newpwd
+        self.pwd = encrypt(newpwd)
         self.save()
 
     def getClasses(self):

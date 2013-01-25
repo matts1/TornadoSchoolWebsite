@@ -9,16 +9,19 @@ function GetInvalidReason (element, submit) {
             return "%s is required";
         }
     }
+    if (element.attr('min-length')) {
+        if (val.length < parseInt(element.attr('min-length'))) {
+            return "%s must be more than 6 characters long";
+        }
+    }
     var type = element.attr('type');
     var numregex = /-?\d+/;
     var emailregex = /.+@.+/;
-//    console.log(element, type);
     if (type == "number") {
         if (val.replace(numregex, "") != "" || val == "") {
             return "%s is not a number";
         }
     } else if (type == "email") {
-        console.log("email");
         if (!val.match(emailregex)) {
             return "%s is not a valid email address";
         }
@@ -61,7 +64,6 @@ function IsValid(element, error) {
         if (error) {
             error.append("<p>" + reason + "</p>");
         }
-        element.val("");
         element.addClass("error");
         return false;
     } else {
@@ -72,9 +74,9 @@ function IsValid(element, error) {
 
 $('form input[type=submit]').live('click', function(event) {
     var siblings = $($(this).parents('form')[0]).find('input, textarea');
-    var error = $($($(this).parents('form')[0]).find('p.err')[0]);
-    var formpwd = "";
-    var pwddone = 0;
+    var error = $($($(this).parents('form')[0]).find('section.err')[0]);
+    formpwd = "";
+    pwddone = 0;
     error.html(""); //clears error messages, so we can add them on
     var valid = true;
     for (var i = 0; i < siblings.length; i++) {
@@ -82,11 +84,9 @@ $('form input[type=submit]').live('click', function(event) {
             valid = false;
         }
     }
-/*    if (valid) {
-        error.append("<p>SUCCESS</p>");
-    }*/
     return valid;
 });
 $('input').live('blur', function(event) {
+    var error = $($($(this).parents('form')[0]).find('section.err')[0]);
     IsValid($(this), false);
 });
