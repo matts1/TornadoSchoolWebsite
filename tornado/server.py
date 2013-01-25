@@ -157,11 +157,14 @@ class Server(object):
         import tornado.ioloop
         import tornado.autoreload
 
-        import hashlib
-        import random
-        m = hashlib.md5()
-        m.update((str(random.random()) + str(random.random())).encode('utf-8'))
-        secret = m.digest()
+#        import hashlib
+#        import random
+#        m = hashlib.md5()
+#        m.update((str(random.random()) + str(random.random())).encode('utf-8'))
+#        secret = m.digest()
+#        print("SECRET:", secret)
+        from functions.random import random_key
+        secret = random_key(100)
 
         app = tornado.web.Application(self.handlers, static_path=self.static, cookie_secret=secret)
 

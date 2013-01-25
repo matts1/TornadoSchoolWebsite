@@ -1,9 +1,9 @@
-from ..base import Base
 from models.rows.users import User, encrypt
 from functions.email import *
 from functions.random import random_key
+from functions.db import *
 
-class Users(Base):
+class Users(object):
     def login(self, email, password):
         if None in [email, password]:
             return None
@@ -26,11 +26,8 @@ class Users(Base):
             return user
         raise ValueError("User not activated")
 
-    def getUsersByReset(self, reset):
-        cur = self.open()
-        cur.execute("SELECT id FROM users WHERE key=? AND (state=1 OR state=4 OR state=5)", [reset])
-        result = cur.fetchone()
-        self.close()
+    def get_users_by_reset(self, reset):
+        result = queryone("SELECT id FROM users WHERE key=? AND (state=1 OR state=4 OR state=5)", [reset])
         if result == None:
             return None
         return User(result[0])
@@ -58,12 +55,8 @@ class Users(Base):
 You have signed up for the CHS assignment management system. In order to activate your account, you must click on this link.
 {address}/activate/{code}
 If you did not register for this account, delete this email and nothing will happen.""".format(first=first, last=last, address=WEBSITE_ADDRESS, code=fields[2]))
-                cur = self.open()
-                cur.execute("INSERT INTO users VALUES (NULL, ?, ?, ?, ?, ?, ?);", fields)
-                self.close()
+                query("INSERT INTO users VALUES (NULL, ?, ?, ?, ?, ?, ?);", fields)
                 return True
 
     def activate(self, key):
-        cur = self.open()
-        cur.execute("UPDATE users SET state=state+1, key=? WHERE (state=0 OR state=2) AND key=?", [random_key(200), key])
-        self.close()
+        query("UPDATE users SET state=state+1, key=? WHERE (state=0 OR state=2) AND key=?", [random_key(200), key])

@@ -1,8 +1,10 @@
 from . import render
 from models.tables.users import Users
 from models.tables.sessions import Sessions
+from functions.users import require_no_login
 
-def login(response):
+@require_no_login
+def login(response, user):
     email = response.get_field("email")
     password = response.get_field("pwd")
     result = Users().login(email, password)
@@ -15,7 +17,8 @@ def login(response):
     elif result.state == 3:
         err = result.email + " has not been validated by an admin yet."
     else:
-        Sessions().register(result.id)
+        sessionid = Sessions().register(result.id)
+        response.set_secure_cookie('session_id', sessionid)
         return response.redirect("/main")
 
     render("users/login.html", response, {"err": err})

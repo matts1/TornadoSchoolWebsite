@@ -1,9 +1,12 @@
 from . import render
+from functions.users import get_level
 from models.tables.users import Users
 users = Users()
 
-def reset(response, reset_key):
-    user = users.getUsersByReset(reset_key)
+@get_level
+def reset(response, reset_key, user=None):
+    print(user)
+    user = users.get_users_by_reset(reset_key)
     if False:
         pass#user is logged in
         #replace user variable with variable of logged in user

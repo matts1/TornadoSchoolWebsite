@@ -65,12 +65,12 @@ cur.execute("""CREATE TABLE studentclass (
     FOREIGN KEY (class) REFERENCES class (id)
 );""")
 
-cur.execute("""CREATE TABLE session (
-    session_id TEXT,
+cur.execute("""CREATE TABLE sessions (
     user INTEGER,
+    key TEXT,
     expiry INTEGER,
     FOREIGN KEY (user) REFERENCES users (id),
-    UNIQUE (session_id)
+    UNIQUE (key)
 );""")
 
 from .tables.users import Users
