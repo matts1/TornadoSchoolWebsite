@@ -4,10 +4,10 @@
     {{ form("Change Password", [
     (1, "Password", "pwd", "password", ("min-length", 6)),
     (1, "Confirm Password", "conf_pwd", "password")
-    ], submit="Change Password", bottom=success) }}
+    ], submit="Change Password", bottom=esc(success)) }}
 {% else %}
     {{ form("Reset Password", [
         (1, "Email", "email", "email")
-        ], err=err, submit="Send Email", bottom=success) }}
+        ], err=err, submit="Send Email", bottom=esc(success)) }}
 {% end if %}
 {% include /global/footer.html %}

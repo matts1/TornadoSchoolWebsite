@@ -1,7 +1,7 @@
-<form enctype="multipart/form-data" method="POST" xmlns="http://www.w3.org/1999/html">
+<form enctype="multipart/form-data" method="POST" xmlns="http://www.w3.org/1999/html" novalidate>
     <fieldset>
         <legend>
-            {{ name }}
+            {{ esc(name) }}
         </legend>
         <p class="form_top">{{ top }}</p>
         <div class="fields">
@@ -14,15 +14,15 @@
         </div>
         <section class="err">
             {% if isinstance(err, str) %}
-                <p>{{ err }}</p>
+                <p>{{ esc(err) }}</p>
             {% else %}
                 {% for item in err %}
-                    <p>{{ item }}</p>
+                    <p>{{ esc(item) }}</p>
                 {% end for %}
             {% end if %}
         </section>
         <p>
-            <input type="submit" value="{{ submit }}">
+            <input type="submit" value="{{ esc(submit) }}">
         </p>
         <p class="form_bottom">{{ bottom }}</p>
     </fieldset>

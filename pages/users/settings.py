@@ -4,7 +4,7 @@ from models.tables.users import Users
 users = Users()
 
 @get_level
-def reset(response, reset_key, user):
+def settings(response, reset_key, user):
     if user == None:
         user = users.get_users_by_reset(reset_key)
     if user != None: #user is logged in or has valid key

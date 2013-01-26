@@ -2,13 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37454c3f-d487-40ec-a098-6e76dca2b730" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/functions/template.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/users/logout.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/global/comments.html" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/pages/users/reset.py" afterPath="$PROJECT_DIR$/pages/users/settings.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/functions/email.py" afterPath="$PROJECT_DIR$/functions/email.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/rows/users.py" afterPath="$PROJECT_DIR$/models/rows/users.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/tables/users.py" afterPath="$PROJECT_DIR$/models/tables/users.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/users/reset.py" afterPath="$PROJECT_DIR$/pages/users/reset.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/functions/form.py" afterPath="$PROJECT_DIR$/functions/form.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/functions/users.py" afterPath="$PROJECT_DIR$/functions/users.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/__init__.py" afterPath="$PROJECT_DIR$/pages/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/other/nojs.py" afterPath="$PROJECT_DIR$/pages/other/nojs.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/users/login.py" afterPath="$PROJECT_DIR$/pages/users/login.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/users/signup.py" afterPath="$PROJECT_DIR$/pages/users/signup.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/forms.js" afterPath="$PROJECT_DIR$/static/js/forms.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.py" afterPath="$PROJECT_DIR$/server.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template_engine/evalnode.py" afterPath="$PROJECT_DIR$/template_engine/evalnode.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template_engine/groupnode.py" afterPath="$PROJECT_DIR$/template_engine/groupnode.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template_engine/main.py" afterPath="$PROJECT_DIR$/template_engine/main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/global/header.html" afterPath="$PROJECT_DIR$/templates/global/header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/nodes/form.html" afterPath="$PROJECT_DIR$/templates/nodes/form.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/nojs.html" afterPath="$PROJECT_DIR$/templates/nojs.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/users/register.html" afterPath="$PROJECT_DIR$/templates/users/register.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/users/reset.html" afterPath="$PROJECT_DIR$/templates/users/reset.html" />
     </list>
@@ -29,56 +40,30 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4022486">
-      <split-first>
-        <leaf>
-          <file leaf-file-name="reset.py" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/pages/users/reset.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="12" column="20" selection-start="402" selection-end="402" vertical-scroll-proportion="0.25862068">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="random.py" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/functions/random.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-                  <folding>
-                    <element signature="e#0#77#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="email.py" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/functions/email.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="11" column="26" selection-start="322" selection-end="322" vertical-scroll-proportion="0.0">
-                  <folding>
-                    <element signature="e#0#14#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="reset.html" pinned="false" current="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/templates/users/reset.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="6" column="47" selection-start="280" selection-end="280" vertical-scroll-proportion="0.15817223">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf>
+      <file leaf-file-name="logout.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pages/users/logout.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="0" selection-start="256" selection-end="256" vertical-scroll-proportion="0.20236088">
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sessions.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/tables/sessions.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="52" selection-start="863" selection-end="863" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -91,22 +76,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/tornado/server.py" />
-        <option value="$PROJECT_DIR$/models/create.py" />
-        <option value="$PROJECT_DIR$/functions/users.py" />
-        <option value="/media/Data/Matt/My Documents/Python/Websites/school/models/tables/sessions.py" />
-        <option value="$PROJECT_DIR$/pages/users/login.py" />
-        <option value="$PROJECT_DIR$/pages/users/signup.py" />
-        <option value="/media/Data/Matt/My Documents/Python/Websites/school/pages/users/reset.py" />
-        <option value="$PROJECT_DIR$/models/tables/users.py" />
-        <option value="$PROJECT_DIR$/models/rows/users.py" />
         <option value="$PROJECT_DIR$/templates/users/register.html" />
-        <option value="/media/Data/Matt/My Documents/Python/Websites/school/pages/users/signup.py" />
-        <option value="/media/Data/Matt/My Documents/Python/Websites/school/models/tables/users.py" />
-        <option value="$PROJECT_DIR$/static/js/forms.js" />
-        <option value="$PROJECT_DIR$/functions/email.py" />
         <option value="$PROJECT_DIR$/templates/users/reset.html" />
-        <option value="$PROJECT_DIR$/pages/users/reset.py" />
+        <option value="$PROJECT_DIR$/templates/nodes/form.html" />
+        <option value="/media/Data/Matt/My Documents/Python/Websites/school/template_engine/evalnode.py" />
+        <option value="$PROJECT_DIR$/functions/templating.py" />
+        <option value="$PROJECT_DIR$/template_engine/evalnode.py" />
+        <option value="$PROJECT_DIR$/pages/other/nojs.py" />
+        <option value="/media/Data/Matt/My Documents/Python/Websites/school/template_engine/main.py" />
+        <option value="$PROJECT_DIR$/functions/form.py" />
+        <option value="$PROJECT_DIR$/functions/template.py" />
+        <option value="$PROJECT_DIR$/template_engine/main.py" />
+        <option value="$PROJECT_DIR$/pages/users/settings.py" />
+        <option value="$PROJECT_DIR$/templates/global/header.html" />
+        <option value="$PROJECT_DIR$/pages/__init__.py" />
+        <option value="$PROJECT_DIR$/server.py" />
+        <option value="$PROJECT_DIR$/pages/users/logout.py" />
       </list>
     </option>
   </component>
@@ -142,7 +127,6 @@
       <sortByType ProjectPane="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -189,7 +173,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="users" />
+              <option name="myItemId" value="global" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -203,7 +187,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
+              <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -217,30 +201,17 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
+              <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="school" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="school" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="functions" />
+              <option name="myItemId" value="tables" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -270,7 +241,7 @@
       <recent name="$PROJECT_DIR$/pages/users/" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.createdb">
+  <component name="RunManager" selected="Python.server">
     <configuration default="false" name="create" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -329,7 +300,7 @@
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
-      <module name="" />
+      <module name="school" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
       <option name="CLASS_NAME" value="" />
@@ -357,6 +328,13 @@
       <option name="TEST_TYPE" value="TEST_SCRIPT" />
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
       <method />
     </configuration>
     <configuration default="false" name="server" type="PythonConfigurationType" factoryName="Python">
@@ -427,7 +405,11 @@
       <created>1359150039757</created>
       <updated>1359150039757</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="password resets are now completely working">
+      <created>1359154227690</created>
+      <updated>1359154227690</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -454,21 +436,21 @@
     <frame x="1600" y="24" width="1920" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297414" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297414" sideWeight="0.49786097" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297414" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3297414" sideWeight="0.49572194" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973261" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14385027" sideWeight="0.67025864" order="0" side_tool="true" content_ui="combo" x="2427" y="116" width="267" height="928" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973261" sideWeight="0.67133623" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14705883" sideWeight="0.67025864" order="0" side_tool="true" content_ui="combo" x="2427" y="116" width="267" height="928" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39978448" sideWeight="0.49786097" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14117648" sideWeight="0.21875" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3297414" sideWeight="0.4983957" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3297414" sideWeight="0.5005348" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297414" sideWeight="0.49786097" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297414" sideWeight="0.49786097" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39978448" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -509,7 +491,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="added decorators to require different levels of authentication" />
+    <option name="LAST_COMMIT_MESSAGE" value="password resets are now completely working" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -525,138 +507,121 @@
     <MESSAGE value="changed the db to have default users" />
     <MESSAGE value="added good css, started on resetting passwords" />
     <MESSAGE value="added decorators to require different levels of authentication" />
+    <MESSAGE value="password resets are now completely working" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="4" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pages/users/index.py">
+    <entry file="file://$PROJECT_DIR$/templates/users/register.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="8" column="18" selection-start="325" selection-end="325" vertical-scroll-proportion="-5.0" />
+      </provider>
+    </entry>
+    <entry file="file:///media/Data/Matt/My Documents/Python/Websites/school/template_engine/evalnode.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="0" selection-start="311" selection-end="311" vertical-scroll-proportion="0.2777778" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template_engine/node.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/other/nojs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="35" selection-start="106" selection-end="106" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template_engine/evalnode.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="30" selection-start="299" selection-end="299" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file:///media/Data/Matt/My Documents/Python/Websites/school/template_engine/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="127" column="37" selection-start="4853" selection-end="4853" vertical-scroll-proportion="3.2070706" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/form.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="5" selection-start="1140" selection-end="1140" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/template.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="21" selection-start="352" selection-end="352" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template_engine/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="44" selection-start="425" selection-end="425" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/global/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="24" selection-start="1637" selection-end="1637" vertical-scroll-proportion="-10.666667">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/users/login.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="103" selection-end="166" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/users/signup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="25" selection-start="167" selection-end="167" vertical-scroll-proportion="0.15517241">
+        <state line="16" column="19" selection-start="0" selection-end="920" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/functions/users.py">
+    <entry file="file://$PROJECT_DIR$/pages/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="265" selection-end="265" vertical-scroll-proportion="0.2158516">
+        <state line="1" column="72" selection-start="101" selection-end="101" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#25#68#0" expanded="true" />
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file:///media/Data/Matt/My Documents/Python/Websites/school/pages/users/reset.py">
+    <entry file="file://$PROJECT_DIR$/server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="5" selection-start="615" selection-end="615" vertical-scroll-proportion="0.43001688">
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///media/Data/Matt/My Documents/Python/Websites/school/models/tables/sessions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="11" selection-start="410" selection-end="410" vertical-scroll-proportion="0.3288364">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/tables/users.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="33" selection-start="1872" selection-end="1872" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///media/Data/Matt/My Documents/Python/Websites/school/pages/users/signup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="341" selection-end="341" vertical-scroll-proportion="0.20236088">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/forms.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="62" selection-start="393" selection-end="393" vertical-scroll-proportion="0.3035413">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/rows/users.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="124" selection-start="1607" selection-end="1607" vertical-scroll-proportion="0.75">
+        <state line="16" column="40" selection-start="521" selection-end="521" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file:///media/Data/Matt/My Documents/Python/Websites/school/models/tables/users.py">
+    <entry file="file://$PROJECT_DIR$/pages/users/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="32" selection-start="1393" selection-end="1393" vertical-scroll-proportion="1.0655738">
+        <state line="24" column="66" selection-start="964" selection-end="964" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/tables/sessions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="52" selection-start="863" selection-end="863" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/users/logout.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="0" selection-start="256" selection-end="256" vertical-scroll-proportion="0.20236088">
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/users/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="60" selection-start="499" selection-end="499" vertical-scroll-proportion="0.3427065">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/email.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="26" selection-start="322" selection-end="322" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/random.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#77#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/users/reset.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="47" selection-start="280" selection-end="280" vertical-scroll-proportion="0.15817223">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/users/reset.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="20" selection-start="402" selection-end="402" vertical-scroll-proportion="0.25862068">
-          <folding />
         </state>
       </provider>
     </entry>

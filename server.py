@@ -11,9 +11,10 @@ server.register('/', index.index)
 server.register('/login', login.login)
 server.register('/signup', signup.signup)
 server.register('/activate/([a-zA-Z0-9]+)', activate.activate)
-server.register('/reset()', reset.reset)
-server.register('/reset/([a-zA-Z0-9]+)', reset.reset)
+server.register('/settings()', settings.settings)
+server.register('/settings/([a-zA-Z0-9]+)', settings.settings)
 server.register('/nojs', nojs.nojs)
+server.register('/logout', logout.logout)
 
 server.run()
 

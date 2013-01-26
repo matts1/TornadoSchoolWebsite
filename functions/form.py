@@ -24,8 +24,14 @@ def form(name, fields, top="", bottom="", err="", submit=None):
             attr[item[0]] = item[1]
 
         finalfields.append(attr)
-    from template_engine.main import Parser
-    return Parser("nodes/form.html").parse().eval({"fields": finalfields,
-        "name": name, "top": top, "bottom": bottom, "err": err, "submit": submit})
-
-
+    from template_engine.main import render
+    from functions.template import makecontext
+    context = {
+        "fields": finalfields,
+        "name": name,
+        "top": top,
+        "bottom": bottom,
+        "err": err,
+        "submit": submit
+    }
+    return render("nodes/form.html", None, context)

@@ -15,13 +15,38 @@
         <header>
             <img src="/static/images/banner.jpg" alt="banner" id="banner">
             <nav>
-                {% run navbar = [
-                ("left", [
-                        ("Reset Password", "/reset")
-                ]), ("right", [
-                        ("Sign Up", "/signup"),
+                {% if user == None %}
+                    {% run navbar = [
+                    ["left", [
+                        ("Reset Password", "/settings")
+                    ]], ["right", [
                         ("Login", "/login"),
-                ])] %}
+                        ("Sign Up", "/signup"),
+                    ]]] %}
+                {% elif user.state == 1 %} {# student #}
+                    {% run navbar = [
+                    ["left", [
+                        ("Home", "/home")
+                    ]], ["right", [
+                        ("Settings", "/settings"),
+                        ("Classes", "/classes"),
+                        ("Logout", "/logout"),
+                    ]]] %}
+                {% elif user.state in [4, 5] %} {# teacher #}
+                    {% run navbar = [
+                    ["left", [
+                        ("Home", "/home")
+                    ]], ["right", [
+                        ("Courses", "/courses"),
+                        ("Classes", "/classes"),
+                        ("Settings", "/settings"),
+                        ("Logout", "/logout"),
+                    ]]] %}
+                {% end if %}
+                {% run navbar[1][1] = navbar[1][1][::-1] %}
+                {% if user != None and user.state == 5 %}
+                    {% run navbar[1][1].insert(1, ("User Management", "/users")) %}
+                {% end if %}
                 {% for side in navbar %}
                 <ul class="first">
                     {% run floatside, side = side %}

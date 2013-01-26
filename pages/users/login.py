@@ -19,6 +19,6 @@ def login(response, user):
     else:
         sessionid = Sessions().register(result.id)
         response.set_secure_cookie('session_id', sessionid)
-        return response.redirect("/main")
+        return response.redirect("/home")
 
     render("users/login.html", response, {"err": err})

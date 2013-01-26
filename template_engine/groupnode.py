@@ -16,7 +16,7 @@ class GroupNode(Node):
 #        print(self.label, results, "\nEND")
         return "".join(results)
 
-    def eval(self, context):
+    def eval(self, context={}):
         return self.eval_children(context)
 
     def __repr__(self):

@@ -1,6 +1,6 @@
 {% run title="Sign Up" %}
 {% include /global/header.html %}
-{% run success={
+{% run success= {
     None: "",
     False: "This email address has already been taken",
     True: "An activation email has been sent to {}. If you do not receive it
@@ -15,7 +15,7 @@
         (1, "Confirm Password", "conf-pwd", "password"),
         (0, "Teacher", "teacher", "checkbox"),
         ],
-    bottom=success,
+    bottom=esc(success),
     top="Anyone registering as a teacher will have to be validated by an admin",
     submit="register") }}
 {% include /global/footer.html %}

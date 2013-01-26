@@ -5,15 +5,17 @@ from .fornode import ForNode
 from .ifnode import IfNode, ElifNode, ElseNode
 from .runnode import RunNode
 
-
 import re
-#TODO: Javascript / HTML injection prevention {{ protected }}
+from functions.template import makecontext
 TEMPLATE_DIR = __file__[::-1].split("/", 2)[2][::-1] + "/templates/"
 
 def render(filename, response, context=None):
-    if context == None:
-        context = {}
-    response.write(Parser(filename).parse().eval(context))
+    context = makecontext(context, response)
+    result = Parser(filename).parse().eval(context)
+    if response != None:
+        response.write(result)
+    else:
+        return result
 
 class Parser(object):
     def __init__(self, data, isfile=True):
