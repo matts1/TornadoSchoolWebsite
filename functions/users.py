@@ -37,7 +37,7 @@ def get_user(response):
 def auth_level(fn, required_levels, redirect):
     def wrapper(response, *args):
         user = get_user(response)
-        if user in required_levels or user.state in required_levels:
+        if user in required_levels or (user != None and user.state in required_levels):
             return fn(response, *args, user=user)
         else:
             response.redirect(redirect)

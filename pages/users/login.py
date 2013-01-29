@@ -20,5 +20,7 @@ def login(response, user):
         sessionid = Sessions().register(result.id)
         response.set_secure_cookie('session_id', sessionid)
         return response.redirect("/home")
+    if email == None:
+        email = ""
 
-    render("users/login.html", response, {"err": err})
+    render("users/login.html", response, {"err": err, "email": email})

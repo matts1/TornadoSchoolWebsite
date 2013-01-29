@@ -25,7 +25,6 @@ def form(name, fields, top="", bottom="", err="", submit=None):
 
         finalfields.append(attr)
     from template_engine.main import render
-    from functions.template import makecontext
     context = {
         "fields": finalfields,
         "name": name,

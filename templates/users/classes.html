@@ -1,0 +1,16 @@
+{% run title="Classes" %}
+{% include /global/header.html %}
+{% if user.state == 1 %}
+{% else %}
+    {{ form("Create a Class", [
+        (1, "Name", "name", ("value", name)),
+        (1, "Year", "year", "number", ("min", 7), ("max", 12), ("value", year)),
+        (0, "Key", "key")
+    ],
+    top="The key is a password students can use to add themselves to a group. Leave it blank to have one randomly generated",
+    err=err, bottom=success) }}
+
+    {{ table("Classes", ["Name", "Year", "Key"], [["class1", 9, "key1"], ["class2", 10, "key2"], ["class3", 11, "key3"]]) }}
+{% end if %}
+
+{% include /global/footer.html %}

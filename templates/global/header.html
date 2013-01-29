@@ -7,9 +7,6 @@
         <link rel="stylesheet" href="/static/css/layout.css">
         <link rel="stylesheet" href="/static/css/style.css">
         <script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
-        <noscript>
-            <meta http-equiv="refresh" content="0; url=/nojs">
-        </noscript>
     </head>
     <body>
         <header>
@@ -55,7 +52,10 @@
                     {% end for %}
                 </ul>
                 {% end for %}
-                {# needs to go here so the nav has already been created #}
             </nav>
         </header>
-        <div id="content"> 
+        <div id="content">
+            <noscript>
+                {# <meta http-equiv="refresh" content="0; url=/nojs"> #}
+                Javascript makes this site much easier to use. Instructions to enable javascript are available <a href="http://enable-javascript.com/">here</a>
+            </noscript>

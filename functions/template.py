@@ -1,6 +1,7 @@
 from functions.users import get_user
 from html import escape
 from functions.form import form
+from functions.table import table
 
 def makecontext(context, response):
     if context == None:
@@ -13,6 +14,7 @@ def makecontext(context, response):
         "form": form,
         "esc": escape,
         "user": user,
+        "table": table,
     }
     for field in customcontext:
         if field in context:

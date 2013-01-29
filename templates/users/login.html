@@ -1,7 +1,7 @@
 {% run title = "Login" %}
 {% include /global/header.html %}
 {{ form("Login", [
-    (1, "Email", "email", "email"),
+    (1, "Email", "email", "email", ("value", email)),
     (1, "Password", "pwd", "password")
     ],
     err=err,

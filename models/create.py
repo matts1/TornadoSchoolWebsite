@@ -39,8 +39,8 @@ cur.execute("""CREATE TABLE work (
 cur.execute("""CREATE TABLE classes (
     id INTEGER,
     year INTEGER NOT NULL,
-    subject TEXT NOT NULL,
-    letter TEXT NOT NULL,
+    name TEXT UNIQUE NOT NULL,
+    key TEXT UNIQUE NOT NULL,
     teacher INTEGER NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (teacher) REFERENCES users (id)
@@ -67,10 +67,9 @@ cur.execute("""CREATE TABLE studentclass (
 
 cur.execute("""CREATE TABLE sessions (
     user INTEGER,
-    key TEXT,
+    key TEXT UNIQUE NOT NULL,
     expiry INTEGER,
-    FOREIGN KEY (user) REFERENCES users (id),
-    UNIQUE (key)
+    FOREIGN KEY (user) REFERENCES users (id)
 );""")
 
 from .tables.users import Users

@@ -29,6 +29,7 @@ if __name__ == "__"main__":
 import os
 import sys
 
+from functions.random import random_key
 
 class Server(object):
     def __init__(self, hostname="", port=8888, static="static"):
@@ -163,8 +164,8 @@ class Server(object):
 #        m.update((str(random.random()) + str(random.random())).encode('utf-8'))
 #        secret = m.digest()
 #        print("SECRET:", secret)
-        from functions.random import random_key
         secret = random_key(100)
+        secret = "reiujgerjregiuj"
 
         app = tornado.web.Application(self.handlers, static_path=self.static, cookie_secret=secret)
 

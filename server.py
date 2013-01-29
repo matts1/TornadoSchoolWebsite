@@ -13,8 +13,10 @@ server.register('/signup', signup.signup)
 server.register('/activate/([a-zA-Z0-9]+)', activate.activate)
 server.register('/settings()', settings.settings)
 server.register('/settings/([a-zA-Z0-9]+)', settings.settings)
-server.register('/nojs', nojs.nojs)
+#server.register('/nojs', nojs.nojs)
 server.register('/logout', logout.logout)
+server.register('/home', home.home)
+server.register('/classes', classes.classes)
 
 server.run()
 
