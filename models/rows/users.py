@@ -2,6 +2,7 @@ from hashlib import sha512
 from functions.email import *
 from functions.random import random_key
 from functions.db import *
+from models.rows.classes import Class
 
 def encrypt(text):
     return sha512(text.encode()).hexdigest()
@@ -39,10 +40,13 @@ Can be called either as User(email) or User(id)"""
         self.pwd = encrypt(newpwd)
         self.save()
 
-    def getClasses(self):
-        result = queryall("SELECT classid FROM studentclass WHERE studentid=?", [self.id])
-        result = [x[0] for x in result] #turns list of 1-item tuples into list
-        return result
+    def getStudentClasses(self):
+        result = queryall("SELECT class FROM studentclass WHERE student=?", [self.id])
+        return [Class(x[0]) for x in result] #turns list of 1-item tuples into list
+
+    def getTeacherClasses(self):
+        result = queryall("SELECT id FROM classes WHERE teacher=?", [self.id])
+        return [Class(x[0]) for x in result]
 
     def prepareReset(self):
         new_key = random_key(200)
@@ -50,3 +54,15 @@ Can be called either as User(email) or User(id)"""
         send_email(self.email, "Password reset for CHS assignment management system",
         """A password reset has been requested for this account on the CHS assignment management system. If you did not click this link, discard this message
 {address}/reset/{key}""".format(address=WEBSITE_ADDRESS, key=new_key))
+
+    def is_teacher(self):
+        return self.state in [4, 5]
+
+    def is_student(self):
+        return self.state==1
+
+    def is_admin(self):
+        return self.state==5
+
+    def is_activated(self):
+        return self.state in [1, 4, 5]

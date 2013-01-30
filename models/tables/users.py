@@ -22,7 +22,7 @@ class Users(object):
 
     def get_activated_user(self, identity):
         user = User(identity)
-        if user.state in [1, 4, 5]:
+        if user.is_activated():
             return user
         raise ValueError("User not activated")
 

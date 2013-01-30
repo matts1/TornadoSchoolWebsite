@@ -1,6 +1,14 @@
 {% run title="Classes" %}
 {% include /global/header.html %}
 {% if user.state == 1 %}
+    {{ form("Join a class",
+        [(1, "Key", "key")],
+        err=err,
+        bottom=success,
+        top="Type the class key in to join the class"
+    ) }}
+    {% run classes=[(c.name, c.year) for c in classes] %}
+    {{ table("Classes", ["Name", "Year"], classes) }}
 {% else %}
     {{ form("Create a Class", [
         (1, "Name", "name", ("value", name)),
@@ -9,8 +17,8 @@
     ],
     top="The key is a password students can use to add themselves to a group. Leave it blank to have one randomly generated",
     err=err, bottom=success) }}
-
-    {{ table("Classes", ["Name", "Year", "Key"], [["class1", 9, "key1"], ["class2", 10, "key2"], ["class3", 11, "key3"]]) }}
+    {% run classes=[(c.name, c.year, c.key) for c in classes] %}
+    {{ table("Classes", ["Name", "Year", "Key"], classes) }}
 {% end if %}
 
 {% include /global/footer.html %}
