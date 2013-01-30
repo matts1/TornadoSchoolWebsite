@@ -32,6 +32,10 @@ class Users(object):
             return None
         return User(result[0])
 
+    def get_teachers(self):
+        teachers = queryall("SELECT id FROM users WHERE state>2")
+        return [User(teacher[0]) for teacher in teachers]
+
     def register(self, fields):
         """validates the data then registers and returns True if it is valid (otherwise returns false)"""
         if len(fields) != 6:

@@ -17,6 +17,7 @@ server.register('/settings/([a-zA-Z0-9]+)', settings.settings)
 server.register('/logout', logout.logout)
 server.register('/home', home.home)
 server.register('/classes', classes.classes)
+server.register('/users', users.users)
 
 server.run()
 
