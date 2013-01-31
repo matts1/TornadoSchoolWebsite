@@ -1,4 +1,4 @@
-def table(name, fields, table):
+def table(name, fields, table, classes=[]):
     for row in table:
         if len(row) != len(fields):
             raise IndexError("Length of all rows must be the same")
@@ -8,5 +8,6 @@ def table(name, fields, table):
         "title": name,
         "thead": fields,
         "content": table,
+        "table_classes": classes,
     }
     return render("nodes/table.html", None, context)

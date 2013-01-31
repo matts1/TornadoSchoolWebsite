@@ -89,3 +89,11 @@ input[type="checkbox"] {
     left: -69px;
     top:  2px;
 }
+
+/* TABLES */
+th[class^=table-sortable:.*] {
+    cursor: pointer;
+    background-image: url("/static/images/sortable.gif");
+    background-position: center left;
+    background-repeat: no-repeat;
+}
