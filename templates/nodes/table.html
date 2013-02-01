@@ -1,5 +1,5 @@
-{{ title }}
-<table class="{% for cls in table_classes %}table-{{ cls }} {% end for %}">
+<h1>{{ title }}</h1>
+<table class="{% for cls in table_classes %}table-{{ cls }} {% end for %}table-autostripe table-stripeclass:alternate">
     <thead>
         <tr>
             {% for item in thead %}

@@ -2,8 +2,8 @@
 {% include /global/header.html %}
 
 {% run fields = [
-("Name", ("sortable:alphanumeric")),
-("Year", ("sortable:numeric")),
+("Name", (["sortable:alphanumeric"])),
+("Year", (["sortable:numeric", "filterable"])),
 ("Key", ("")),
 ] %}
 
@@ -25,7 +25,7 @@
     top="The key is a password students can use to add themselves to a group. Leave it blank to have one randomly generated",
     err=err, bottom=success) }}
     {% run classes=[(c.name, c.year, c.key) for c in classes] %}
-    {{ table("Classes", fields, classes, ["autosort:1"]) }}
+    {{ table("Classes", fields, classes, ["autosort:1", "autofilter"]) }}
 {% end if %}
 
 {% include /global/footer.html %}

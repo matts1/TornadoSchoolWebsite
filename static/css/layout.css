@@ -91,9 +91,37 @@ input[type="checkbox"] {
 }
 
 /* TABLES */
-th[class^=table-sortable:.*] {
+table[class^=table-autosort] td, table[class^=table-autosort] th {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+table[class^=table-autosort] th[class^=table-sortable] {
     cursor: pointer;
     background-image: url("/static/images/sortable.gif");
-    background-position: center left;
     background-repeat: no-repeat;
+    background-position: 3px center;
+    padding-left: 18px;
+}
+
+table[class^=table-autosort] thead tr {
+    background-color: #CCCCFF;
+}
+
+table[class^=table-autosort] tr {
+    background-color: white;
+}
+
+table[class^=table-autosort] tr.alternate {
+    background-color: #FFFFCC;
+}
+
+table[class^=table-autosort] {
+    margin: 0 auto;
+}
+
+/* HEADINGS */
+h1 {
+    font-size: 18px;
+    font-weight: 700;
 }

@@ -1,3 +1,4 @@
+// http://www.javascripttoolbox.com/lib/table/index.php
 var Sort = (function(){
 	var sort = {};
 	// Default alpha-numeric sort
