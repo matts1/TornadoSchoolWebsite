@@ -104,18 +104,6 @@ table[class^=table-autosort] th[class^=table-sortable] {
     padding-left: 18px;
 }
 
-table[class^=table-autosort] thead tr {
-    background-color: #CCCCFF;
-}
-
-table[class^=table-autosort] tr {
-    background-color: white;
-}
-
-table[class^=table-autosort] tr.alternate {
-    background-color: #FFFFCC;
-}
-
 table[class^=table-autosort] {
     margin: 0 auto;
 }

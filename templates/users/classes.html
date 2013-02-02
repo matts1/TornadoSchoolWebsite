@@ -15,7 +15,7 @@
         top="Type the class key in to join the class"
     ) }}
     {% run classes=[(c.name, c.year) for c in classes] %}
-    {{ table("Classes", fields[:2], classes) }}
+    {{ table("Classes", "You are not currently in any classes.", fields[:2], classes) }}
 {% else %}
     {{ form("Create a Class", [
         (1, "Name", "name", ("value", name)),
@@ -25,7 +25,7 @@
     top="The key is a password students can use to add themselves to a group. Leave it blank to have one randomly generated",
     err=err, bottom=success) }}
     {% run classes=[(c.name, c.year, c.key) for c in classes] %}
-    {{ table("Classes", fields, classes, ["autosort:1", "autofilter"]) }}
+    {{ table("Classes", "You are not currently in any classes", fields, classes, ["autosort:1", "autofilter"]) }}
 {% end if %}
 
 {% include /global/footer.html %}

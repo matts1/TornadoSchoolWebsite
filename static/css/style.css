@@ -35,3 +35,16 @@ form section.err p {
     line-height: 14px;
     color: #FF0000;
 }
+
+/* TABLES */
+table[class^=table-autosort] thead tr {
+    background-color: #CCCCFF;
+}
+
+table[class^=table-autosort] tr {
+    background-color: white;
+}
+
+table[class^=table-autosort] tr.alternate {
+    background-color: #FFFFCC;
+}
