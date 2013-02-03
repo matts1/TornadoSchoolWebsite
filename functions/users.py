@@ -1,6 +1,10 @@
 #decorators defined here
 from models.tables.sessions import Sessions
 from models.rows.users import User
+import settings
+import traceback
+import sys
+import html
 session = Sessions()
 
 def require_login(fn):
@@ -23,10 +27,10 @@ def get_level(fn):
 
 def get_user(response):
     session_cookie = response.get_secure_cookie("session_id")
-    if session_cookie != None:
+    if session_cookie is not None:
         session_cookie = session_cookie.decode('utf-8')
         user = session.validate(session_cookie)
-        if user != None:
+        if user is not None:
             session.refresh(session_cookie)
             return User(user)
         else:
@@ -37,8 +41,22 @@ def get_user(response):
 def auth_level(fn, required_levels, redirect):
     def wrapper(response, *args):
         user = get_user(response)
-        if user in required_levels or (user != None and user.state in required_levels):
-            return fn(response, *args, user=user)
+        if user in required_levels or (user is not None and user.state in required_levels):
+            try:
+                return fn(response, *args, user=user)
+            except Exception as err:
+                from template_engine.main import render
+                exc = traceback.format_exception(*sys.exc_info())
+                print("".join(exc))
+                exc = "".join([html.escape(line) for line in exc]).split("\n")
+                for linenum in range(len(exc)):
+                    line = exc[linenum]
+                    for index in range(len(line)):
+                        if line[index] != " ":
+                            break
+                    exc[linenum] = "&nbsp" * index * 4 + line[index:]
+
+                render('global/error.html', response, {"error": 500, "debug": settings.DEBUG, "traceback": exc})
         else:
             response.redirect(redirect)
         return None

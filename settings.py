@@ -1,1 +1,1 @@
-__author__ = 'matt'
+DEBUG = True

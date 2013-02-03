@@ -19,5 +19,8 @@ server.register('/home', home.home)
 server.register('/classes', classes.classes)
 server.register('/users', users.users)
 
+#this needs to go last, since it's a 404 page
+server.register('(.*)', missing.missing)
+
 server.run()
 
