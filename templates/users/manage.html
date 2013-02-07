@@ -1,6 +1,10 @@
 {% run title="User Management" %}
 {% include /global/header.html %}
-
+<style>
+    input[type=submit] {
+        margin-top: 10px;
+    }
+</style>
 <form enctype="multipart/form-data" method="POST" novalidate>
     {% run results = [] %}
     {% for teacher in teachers %}
@@ -10,7 +14,12 @@
         {% end for %}
         {% run results.append([teacher.email, teacher.first, teacher.last, """<select name='level{id}'>{options}</select>""".format(id=teacher.id, options=options)]) %}
     {% end for %}
-    {{ table("Teachers", ["Email", "First Name", "Surname", "Authentication"], results) }}
+    {{ table("Teachers", "There are no users.", [
+            ["Email", ["sortable:alphanumeric"]],
+            ["First Name", ["sortable:alphanumeric"]],
+            ["Surname", ["sortable:alphanumeric"]],
+            ["Authentication", ["sortable:alphanumeric"]]
+    ], results, classes=["autosort"]) }}
     <input type="submit" value="Save Changes">
 </form>
 

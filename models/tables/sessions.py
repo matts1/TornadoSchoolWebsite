@@ -26,3 +26,6 @@ class Sessions(object):
 
     def delete(self, key):
         query("DELETE FROM sessions WHERE key=?", [key])
+
+    def deleteuser(self, user):
+        query("DELETE FROM sessions WHERE user=?", [user])

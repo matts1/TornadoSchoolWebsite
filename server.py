@@ -18,6 +18,9 @@ server.register('/logout', logout.logout)
 server.register('/home', home.home)
 server.register('/classes', classes.classes)
 server.register('/users', users.users)
+server.register('/courses', courses.courses_list)
+server.register('/createcourse', courses.create_course)
+server.register(r'/courses/(\d+)', courses.view_course)
 
 #this needs to go last, since it's a 404 page
 server.register('(.*)', missing.missing)
